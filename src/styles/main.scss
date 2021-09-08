@@ -1,0 +1,40 @@
+@use './abstracts/mixins';
+
+html {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  line-height: 1.5;
+  font-family: 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+main {
+  display: grid;
+  place-items: center;
+  min-height: 100vh;
+}
+
+@include mixins.tablet() {
+  h1 {
+    color: teal;
+  }
+}
+@include mixins.laptop() {
+  h1 {
+    color: tomato;
+  }
+}
+@include mixins.desktop() {
+  h1 {
+    color: yellowgreen;
+  }
+}
